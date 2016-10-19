@@ -3,8 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ketchum.otf">
+            <string>Ketchum</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,12 +25,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jH-dd-rb6">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmr-4L-F3F">
+                                        <fontDescription key="fontDescription" name="Ketchum" family="Ketchum" pointSize="50"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="-2" height="3"/>
+                                    </label>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsi-bJ-bOV">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="weG-x4-3aa"/>
+                                            <constraint firstAttribute="width" constant="30" id="xqF-FM-Lnk"/>
+                                        </constraints>
+                                        <state key="normal" image="music"/>
+                                        <connections>
+                                            <action selector="musicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zYg-lc-uCh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="nmr-4L-F3F" firstAttribute="bottom" secondItem="1jH-dd-rb6" secondAttribute="bottomMargin" id="D95-dk-JEu"/>
                                     <constraint firstAttribute="height" constant="65" id="Iln-Ep-egN"/>
+                                    <constraint firstItem="nmr-4L-F3F" firstAttribute="trailing" secondItem="1jH-dd-rb6" secondAttribute="trailingMargin" id="Osa-G3-2Ea"/>
+                                    <constraint firstItem="nmr-4L-F3F" firstAttribute="top" secondItem="1jH-dd-rb6" secondAttribute="top" constant="15" id="R13-4C-ARA"/>
+                                    <constraint firstAttribute="trailing" secondItem="fsi-bJ-bOV" secondAttribute="trailing" constant="8" id="VTk-31-IXg"/>
+                                    <constraint firstItem="fsi-bJ-bOV" firstAttribute="top" secondItem="1jH-dd-rb6" secondAttribute="top" constant="20" id="XYL-L9-KUA"/>
+                                    <constraint firstItem="nmr-4L-F3F" firstAttribute="leading" secondItem="1jH-dd-rb6" secondAttribute="leadingMargin" id="vxj-zo-yyS"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="D9J-pE-o38">
+                            <searchBar contentMode="redraw" placeholder="Search Pokedex" translatesAutoresizingMaskIntoConstraints="NO" id="D9J-pE-o38">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="scR-Vv-sbb"/>
                                 </constraints>
@@ -98,6 +129,7 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="EPc-Fz-coL" id="DDs-g5-UYm"/>
+                        <outlet property="searchBar" destination="D9J-pE-o38" id="lEj-jy-g4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,5 +140,6 @@
     <resources>
         <image name="1" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="music" width="100" height="100"/>
     </resources>
 </document>
