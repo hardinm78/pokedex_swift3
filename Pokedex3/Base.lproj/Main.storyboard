@@ -32,6 +32,7 @@
                             </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-zs-Cxw"/>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EPc-Fz-coL">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uFD-Ov-v8f">
                                     <size key="itemSize" width="105" height="105"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,7 +40,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QmW-kC-pEM">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="QmW-kC-pEM" customClass="PokeCell" customModule="Pokedex3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -69,6 +70,10 @@
                                             <constraint firstItem="WBg-bD-Cqy" firstAttribute="top" secondItem="5uT-Nr-A1h" secondAttribute="bottom" id="r11-9O-Nec"/>
                                             <constraint firstAttribute="trailing" secondItem="WBg-bD-Cqy" secondAttribute="trailing" id="vTP-uh-mOV"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="nameLbl" destination="WBg-bD-Cqy" id="kTS-NJ-77K"/>
+                                            <outlet property="thumbImage" destination="5uT-Nr-A1h" id="azb-F7-alh"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -91,6 +96,9 @@
                             <constraint firstItem="D9J-pE-o38" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zV7-NI-k6U"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="EPc-Fz-coL" id="DDs-g5-UYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
